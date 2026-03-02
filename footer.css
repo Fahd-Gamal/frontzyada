@@ -1,0 +1,219 @@
+/* ===============================
+FOOTER BASE
+================================ */
+.glass-footer {
+    padding: clamp(20px, 4vw, 32px) 16px;
+    /* background: linear-gradient(135deg, #141e30, #243b55); */
+    /* background: linear-gradient(45deg, #6ea3fb 0%, #eaf2f3 50%, #6ea3fb 75%, #eaf2f3 100%); */
+    direction: rtl;
+    overflow: visible;
+}
+
+/* ===============================
+FOOTER CONTENT (VERTICAL)
+================================ */
+.footer-content {
+    max-width: 1700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* 👈 الافتراضي */
+    align-items: center;
+    gap: clamp(12px, 3vw, 18px);
+}
+
+/* ===============================
+REMOVE LINK STYLES
+================================ */
+.social-icons a {
+    text-decoration: none !important;
+    /* 👈 مفيش خط */
+    color: inherit;
+}
+
+/* ===============================
+SOCIAL ICONS WRAPPER
+================================ */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: nowrap;
+    /* 👈 7 أيقونات في صف واحد */
+    width: 100%;
+
+    gap: clamp(6px, 1.5vw, 14px);
+    margin-right: 195px;
+}
+
+/* ===============================
+GLASS ICON
+================================ */
+.glass-icon {
+    position: relative;
+
+    width: clamp(34px, 5.2vw, 50px);
+    height: clamp(34px, 5.2vw, 50px);
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    display: grid;
+    place-items: center;
+
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+
+/* ===============================
+ICON STYLE
+================================ */
+.glass-icon i {
+    font-size: clamp(16px, 2.6vw, 22px);
+    color: #fff;
+    z-index: 2;
+}
+
+/* ===============================
+ACTIVE / PRESS
+================================ */
+.glass-icon.active {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(22px) saturate(190%);
+    transform: scale(0.95);
+}
+
+/* ===============================
+TOOLTIP
+================================ */
+.glass-icon::after {
+    content: attr(data-label);
+    position: absolute;
+
+    bottom: calc(-1 * clamp(32px, 6vw, 40px));
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+
+    opacity: 0;
+    pointer-events: none;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    color: #fff;
+
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: clamp(11px, 2.4vw, 12px);
+    white-space: nowrap;
+
+    transition: 0.3s ease;
+}
+
+.glass-icon.active::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ===============================
+LIGHT REFLECTION
+================================ */
+.reflection {
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.35),
+            transparent);
+
+    transform: rotate(25deg);
+    opacity: 0;
+}
+
+.glass-icon:hover .reflection,
+.glass-icon.active .reflection {
+    animation: shine 1.2s ease;
+}
+
+@keyframes shine {
+    0% {
+        left: -60%;
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 130%;
+        opacity: 0;
+    }
+}
+
+/* ===============================
+RIPPLE EFFECT
+================================ */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(0);
+    animation: ripple 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+/* ===============================
+COPYRIGHT (UNDER ICONS)
+================================ */
+.copyright {
+    color: #fff;
+    font-size: clamp(15px, 2.4vw, 20px);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    opacity: 0.8;
+    direction: ltr;
+    text-align: left;
+    white-space: nowrap;
+    margin-top: 10px;
+    /* 👈 سطر واحد بس */
+}
+
+@media (min-width: 1024px) {
+    .footer-content {
+        flex-direction: row;
+        /* 👈 كمبيوتر فقط */
+        justify-content: space-between;
+    }
+
+}
+
+.reseved {
+    display: block;
+}
+
+@media (max-width:1024px) {
+    .reseved {
+        display: inline-block;
+    }
+
+    .social-icons {
+        margin-left: 195px;
+    }
+}

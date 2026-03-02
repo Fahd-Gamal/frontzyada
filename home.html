@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/home.css">
+    <link rel="stylesheet" href="CSS/nav.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="glass-navbar">
+        <div class="navbar-container">
+            <!-- Logo/Brand (Center) -->
+            <a href="home.html" class="navbar-brand">
+                <div class="brand-logo">
+                    <!-- <i class="fas fa-gem"></i> -->
+                    <img src="IMG/زياادة-01-01.svg" alt="Logo" class="logo-text-wrapper">
+                </div>
+                <span class="logo-svg">Zeyada</span>
+            </a>
+
+            <!-- Theme Toggle -->
+            <div class="theme-toggle" onclick="toggleTheme()">
+                <div class="toggle-slider" id="themeSlider">
+                    <i class="fas fa-sun"></i>
+                </div>
+            </div>
+
+            <!-- Desktop Buttons -->
+            <div class="navbar-buttons">
+                <a href="login.html" class="glass-btn">Login</a>
+                <a href="register.html" class="glass-btn btn-register">Register</a>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <!-- Mobile Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-items">
+            <a href="login.html" class="glass-btn" onclick="closeMenu()">Login</a>
+            <a href="register.html" class="glass-btn btn-register" onclick="closeMenu()">Register</a>
+        </div>
+    </div>
+    <!-- finish navbar -->
+    <!-- main -->
+    <!-- Hero Section (Existing) -->
+    <section class="hero">
+        <div id="glassCircle">
+            <div class="logo-container">
+                <div class="logo-glass-circle">
+                    <!-- <div class="rotating-logo">
+                        <img src="IMG/زياادة-01-01.svg" alt="Rotating Logo">
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <img src="IMG/Where-01.svg" alt="Hero Image" class="hero-bg">
+    </section>
+
+    <!-- NEW: Video Section -->
+    <!-- <section class="video-section fade-in">
+        <div class="video-container">
+            <div class="video-wrapper">
+                <video id="mainVideo" controls>
+                    <source src="IMG/WhatsApp Video 2025-06-21 at 07.30.56_0c669a76.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay"></div>
+                <div class="play-button-overlay" onclick="toggleVideo()">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="video-section fade-in">
+        <div class="video-container">
+            <div class="video-wrapper">
+                <video id="mainVideo" controls>
+                    <source src="IMG/WhatsApp Video 2025-06-21 at 07.30.56_0c669a76.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay"></div>
+                <div class="play-button-overlay" onclick="toggleVideo()">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: About Section -->
+    <section class="about-section fade-in">
+        <div class="about-card">
+            <p>
+                A creative platform for Arabic typography, offering fonts, digital brushes, workbooks, and workshops —
+                both free and
+                premium — for designers and lettering artists.
+            </p>
+        </div>
+    </section>
+
+    <!-- NEW: Products Section -->
+    <section class="products-section fade-in">
+        <div class="section-header">
+            <h2>Our Products</h2>
+            <p>Discover our premium collection</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Product Card 1: Rotating Logo (Fixed, Non-interactive) -->
+            <div class="product-card">
+                <img src="IMG/1000-03.jpg.jpeg" alt="Workshops" class="product-bg">
+                <div class="product-glass-overlay"></div>
+                <a href="brochures.html" class="product-button">
+                    <span class="product-button-text">كراسات – Brochures</span>
+                </a>
+            </div>
+            <!-- Product Card 2: فرش – Brushes -->
+            <div class="product-card">
+                <img src="IMG/1000-02.jpg.jpeg" alt="Brushes" class="product-bg">
+                <div class="product-glass-overlay"></div>
+                <a href="brushes.html" class="product-button">
+                    <span class="product-button-text">فرش – Brushes</span>
+                </a>
+            </div>
+
+            <!-- Product Card 3: ورش – Workshops -->
+            <div class="product-card">
+                <img src="IMG/Untitled-1-03.jpg.jpeg" alt="Workshops" class="product-bg">
+                <div class="product-glass-overlay"></div>
+                <a href="workshops.html" class="product-button">
+                    <span class="product-button-text">ورش – Workshops</span>
+                </a>
+            </div>
+
+            <!-- Product Card 4: مخطوطات – Calligraphies -->
+            <div class="product-card">
+                <img src="IMG/1000-03.jpg.jpeg" alt="Calligraphies" class="product-bg">
+                <div class="product-glass-overlay"></div>
+                <a href="calligraphies.html" class="product-button">
+                    <span class="product-button-text"><span style="display: block;">مخطوطات</span> –
+                        Calligraphies</span>
+                </a>
+            </div>
+
+            <!-- Product Card 5: فونتات – Fonts -->
+            <div class="product-card">
+                <img src="IMG/1000-01.jpg.jpeg" alt="Fonts" class="product-bg">
+                <div class="product-glass-overlay"></div>
+                <a href="fonts.html" class="product-button">
+                    <span class="product-button-text">فونتات – Fonts</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer class="glass-footer">
+        <div class="footer-content">
+
+            <div class="social-icons">
+
+                <a href="https://www.instagram.com/zy_a_da?igsh=bTQxdTZqa3ltbTZ4&utm_source=qr" target="_blank"
+                    class="glass-icon" data-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span class="reflection"></span>
+                </a>
+
+                <a href="https://youtube.com/@ahmedzeyadaaa?feature=shared" target="_blank" class="glass-icon"
+                    data-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                    <span class="reflection"></span>
+                </a>
+
+                <a href="https://www.facebook.com/ze.y.da1111" target="_blank" class="glass-icon" data-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span class="reflection"></span>
+                </a>
+
+                <a href="https://t.me/@A_M_S_B" target="_blank" class="glass-icon" data-label="Telegram">
+                    <i class="fab fa-telegram-plane"></i>
+                    <span class="reflection"></span>
+                </a>
+
+                <a href="https://wa.me/201025608578" target="_blank" class="glass-icon" data-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="reflection"></span>
+                </a>
+
+                <a href="https://pin.it/2JMMWl7kB" target="_blank" class="glass-icon" data-label="Pinterest">
+                    <i class="fab fa-pinterest-p"></i>
+                    <span class="reflection"></span>
+                </a>
+
+                <a href="https://www.behance.net/zy_a_da" target="_blank" class="glass-icon" data-label="Behance">
+                    <i class="fab fa-behance"></i>
+                    <span class="reflection"></span>
+                </a>
+            </div>
+            <div class="copyright">
+                <span>All rights</span>
+                <span class="reseved">Reserved © 2026</span>
+            </div>
+        </div>
+    </footer>
+    <script src="JS/home.js"></script>
+    <script src="JS/footer.js"></script>
+    <script src="JS/nav.js"></script>
+</body>
+
+</html>
