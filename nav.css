@@ -533,3 +533,15 @@ body.dark-mode .demo-card {
     background: rgba(255, 255, 255, 0.4);
     color: black;
 }
+
+
+.logo-text-wrapper {
+    width: 110%;
+    height: 110%;
+
+    display: block;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
