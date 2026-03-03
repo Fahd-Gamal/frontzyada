@@ -510,3 +510,172 @@ html {
     animation-play-state: paused;
     transform: scale(1.15);
 }
+
+/* ===== Hero Section ===== */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /* يغطي كامل الشاشة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Hero Background Image */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* تغطي كامل الـ hero */
+    object-position: center center;
+    z-index: -1;
+}
+
+/* Logo Container */
+.logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(200px, 30vw, 400px);
+    /* يتغير مع حجم الشاشة */
+    height: auto;
+    /* height يتغير حسب width */
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Logo Image داخل الـ container */
+.logo-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.25));
+}
+
+/* Float Animation للوجو */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    75% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.logo-container img {
+    animation: floatAnimation 6s ease-in-out infinite;
+    transition: transform 0.2s ease-out;
+}
+
+/* Hover interaction - يكبر ويقف */
+.hero:hover .logo-container img {
+    animation-play-state: paused;
+    transform: scale(1.1);
+}
+
+/* ===== Responsive Hero ===== */
+@media (max-width: 992px) {
+    .logo-container {
+        width: clamp(180px, 35vw, 350px);
+        top: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-container {
+        width: clamp(150px, 45vw, 300px);
+        top: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container {
+        width: clamp(120px, 60vw, 250px);
+        top: 50%;
+    }
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: auto;
+    /* بدل min-height كبير */
+    min-height: 70vh;
+    /* ارتفاع مبدئي معقول */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+/* Hero Background Image */
+.hero-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    /* أصغر من 100% */
+    max-width: 100%;
+    max-height: 90vh;
+    /* يمنعها من تغطية كل الشاشة */
+    height: 100%;
+    object-fit: contain;
+    /* يظهر كامل الصورة */
+    z-index: -1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .hero {
+        min-height: 60vh;
+    }
+
+    .hero-bg {
+        width: 70%;
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 50vh;
+    }
+
+    .hero-bg {
+        width: 60%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 40vh;
+    }
+
+    .hero-bg {
+        width: 80%;
+        max-width: 400px;
+    }
+}
